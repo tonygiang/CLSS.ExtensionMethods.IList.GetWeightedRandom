@@ -4,7 +4,7 @@
 
 Sampling a list of elements with weight is a common use case without built-in support in the standard library.
 
-```
+```csharp
 var rng = new System.Random();
 var weights = new double[collection.Count];
 for (int i = 0; i < weights.Length; ++i)
@@ -26,7 +26,7 @@ Above is a seemingly correct weighted randomization implementation that contains
 
 `GetWeightedRandom` is a method that implements weighted randomization so that it can be written in one line. It takes in a weight selector function with a `Func<T, double>` signature.
 
-```
+```csharp
 using CLSS;
 using System.Linq;
 
@@ -49,7 +49,7 @@ Internally, this package uses and depends on the `DefaultRandom` package in CLSS
 
 Optionally, `GetWeightedRandom` and `GetWeightedRandomIndex` also take in a `System.Random` of your choosing in case you want a custom-seeded random number generator:
 
-```
+```csharp
 using CLSS;
 
 var chosenElement = list.GetWeightedRandom(weightSelector, customrng);
